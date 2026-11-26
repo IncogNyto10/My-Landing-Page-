@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Víctor Manuel Alzate — Perfil Profesional</title>
+
+  <!-- Logo V minimalista para pestaña (Favicon SVG) -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23111113' stroke='%233F3F46' stroke-width='2'/%3E%3Cpath d='M17 18L32 48L47 18H39.5L32 34L24.5 18H17Z' fill='%23FFFFFF'/%3E%3C/svg%3E" />
+  <meta name="theme-color" content="#09090B" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google Fonts: Space Grotesk, Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet" />
+  <!-- Devicon CDN -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            display: ['"Space Grotesk"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+          },
+          colors: {
+            void: '#09090B',
+            surface: '#141417',
+          },
+          borderRadius: {
+            card: '1.25rem',
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html {
+      scroll-padding-top: 67px;
+      scroll-behavior: smooth;
+    }
+
+    @media (min-width: 768px) {
+      html {
+        scroll-snap-type: y mandatory;
+      }
+    }
+
+    @media (max-width: 767px) {
+      html {
+        scroll-snap-type: y proximity;
+      }
+    }
+
+    body {
+      background-color: #09090B;
+      color: #FFFFFF;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .tabular {
+      font-variant-numeric: tabular-nums;
+    }
+
+    .slide {
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      min-height: calc(100vh - 67px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .slide.is-active .reveal {
+      opacity: 1;
+      transform: none;
+    }
+
+    .slide.is-active .reveal.d1 {
+      transition-delay: 0.08s;
+    }
+
+    .slide.is-active .reveal.d2 {
+      transition-delay: 0.16s;
+    }
+
+    .slide.is-active .reveal.d3 {
+      transition-delay: 0.24s;
+    }
+
+    .slide.is-active .reveal.d4 {
+      transition-delay: 0.32s;
+    }
+
+    .step {
+      opacity: 0.35;
+      transform: translateY(8px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .step.is-shown {
+      opacity: 1;
+      transform: none;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #52525B;
+      transition: height 0.25s ease, background 0.25s ease;
+      cursor: pointer;
+    }
+
+    .dot:hover {
+      background: #D4D4D8;
+    }
+
+    .dot.is-active {
+      height: 24px;
+      background: #FFFFFF;
+    }
+
+    kbd {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      border: 1px solid #52525B;
+      border-bottom-width: 2px;
+      border-radius: 4px;
+      padding: 1px 6px;
+      background: #141417;
+      color: #FFFFFF;
+    }
+
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #09090B;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #3F3F46;
+      border-radius: 9999px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #71717A;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .reveal,
+      .step {
+        transition: none !important;
+      }
+    }
+
+    /* ============================================================
+       ANIMATIONS
+    ============================================================ */
+
+    /* Float badge on portada */
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-7px);
+      }
+    }
+
+    .float-badge {
+      animation: float 3.5s ease-in-out infinite;
+    }
+
+    /* Subtle pulse on the portada h1 name highlight */
+    @keyframes shimmer-in {
+      from {
+        opacity: 0.6;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Tray cards hover lift */
+    .tray-card {
+      transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .tray-card:hover {
+      transform: translateY(-5px);
+      border-color: #71717A;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Project logo hover animation */
+    .proj-logo {
+      transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .proj-logo:hover {
+      transform: scale(1.1) rotate(-4deg);
+    }
+
+    /* Prob/impact card hover */
+    .prob-card {
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .prob-card:hover {
+      transform: translateY(-3px);
+      border-color: #71717A;
+    }
+
+    /* Tech stack list items hover */
+    .stack-item {
+      transition: color 0.18s ease, padding-left 0.18s ease;
+      cursor: default;
+    }
+
+    .stack-item:hover {
+      color: #FFFFFF !important;
+      padding-left: 6px;
+    }
+
+    /* Differential column hover */
+    .diff-col {
+      transition: border-color 0.25s ease;
+    }
+
+    .diff-col:hover {
+      border-color: #A1A1AA;
+    }
+
+    /* Metric number count-up glow on project slides */
+    @keyframes metric-appear {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .metric-animate {
+      animation: metric-appear 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    /* Closing card subtle entrance pulse */
+    @keyframes card-breath {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+      }
+
+      50% {
+        box-shadow: 0 0 32px 4px rgba(255, 255, 255, 0.08);
+      }
+    }
+
+    .closing-card {
+      animation: card-breath 4s ease-in-out infinite;
+    }
+  </style>
+</head>
+
+<body class="antialiased selection:bg-white selection:text-void">
+
+  <!-- ============================ HEADER STICKY + BARRA DE PROGRESO ============================ -->
+  <header class="sticky top-0 z-30 bg-void/95 backdrop-blur-md border-b border-zinc-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+      <button type="button" onclick="ir(0)" class="flex items-center gap-3 text-left group">
+        <div
+          class="w-9 h-9 rounded-lg bg-surface border border-zinc-700 flex items-center justify-center group-hover:border-white transition-colors">
+          <svg viewBox="0 0 64 64" class="w-5 h-5" aria-hidden="true">
+            <path d="M14 16L32 50L50 16H41.5L32 35L22.5 16H14Z" fill="#FFFFFF" />
+          </svg>
+        </div>
+        <div class="hidden sm:block leading-tight">
+          <span class="font-display font-semibold text-white text-sm block">Víctor Manuel Alzate</span>
+          <span class="text-[11px] font-mono text-zinc-300" data-i18n="hdr_role">Ingeniero en Sistemas · Datos &
+            IA</span>
+        </div>
+      </button>
+
+      <div class="flex items-center gap-4">
+        <span id="tituloActual" class="hidden md:block text-sm font-medium text-zinc-200"></span>
+        <span class="hidden md:block h-5 w-px bg-zinc-700"></span>
+
+        <span class="font-display font-semibold text-sm tabular text-white">
+          <span id="numActual">01</span><span class="text-zinc-400"> / <span id="numTotal">10</span></span>
+        </span>
+
+        <div class="inline-flex rounded-lg bg-surface p-1 border border-zinc-700" role="group" aria-label="Idioma">
+          <button id="btn-lang-es" type="button"
+            class="px-2 py-0.5 rounded-md text-xs font-bold transition-all bg-white text-void">
+            ES
+          </button>
+          <button id="btn-lang-en" type="button"
+            class="px-2 py-0.5 rounded-md text-xs font-bold transition-all text-zinc-300 hover:text-white">
+            EN
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="h-[3px] bg-zinc-800">
+      <div id="barraProgreso" class="h-full bg-white transition-all duration-500" style="width: 0%"></div>
+    </div>
+  </header>
+
+  <!-- Navegación lateral de puntos -->
+  <nav id="puntos" class="hidden sm:flex fixed right-5 top-1/2 -translate-y-1/2 z-20 flex-col items-center gap-2"
+    aria-label="Diapositivas"></nav>
+
+  <main>
+
+    <!-- ============================ 01 · PORTADA ============================ -->
+    <section class="slide" data-titulo-es="Portada" data-titulo-en="Cover">
+      <div class="max-w-4xl mx-auto text-center">
+        <span
+          class="reveal float-badge bg-surface text-zinc-200 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-8 inline-block border border-zinc-700"
+          data-i18n="s1_pill">
+          Cali, Colombia · Ingeniero en Sistemas · Datos & IA
+        </span>
+
+        <h1
+          class="reveal d1 font-display text-5xl sm:text-7xl md:text-8xl font-semibold text-white mb-7 tracking-tight leading-[1.02]">
+          Víctor Manuel<br><span class="text-zinc-400">Alzate</span>
+        </h1>
+
+        <p class="reveal d2 text-lg sm:text-xl text-zinc-200 leading-relaxed max-w-2xl mx-auto mb-10"
+          data-i18n="s1_sub">
+          Construyo soluciones donde convergen código, datos e inteligencia artificial para eliminar cuellos de botella
+          reales y acelerar el negocio.
+        </p>
+
+        <div class="reveal d3 flex flex-wrap items-center justify-center gap-4 mb-14">
+          <button type="button" onclick="ir(1, true)"
+            class="inline-flex items-center gap-2 bg-white hover:bg-zinc-200 text-void font-semibold text-sm px-6 py-3 rounded-lg transition-colors">
+            <span data-i18n="s1_cta">Empezar recorrido</span>
+            <i data-lucide="arrow-down" class="w-4 h-4"></i>
+          </button>
+          <button type="button" onclick="ir(4, true)"
+            class="inline-flex items-center gap-1.5 text-sm font-semibold text-zinc-200 hover:text-white px-3 py-3 transition-colors">
+            <span data-i18n="s1_cta_proj">Ir directo a proyectos</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <p class="reveal d4 text-xs text-zinc-300 flex flex-wrap items-center justify-center gap-2">
+          <span><kbd>↓</kbd> <span data-i18n="hint_scroll">o rueda del mouse para avanzar</span></span>
+          <span>·</span>
+          <span><kbd>F</kbd> <span data-i18n="hint_fs">pantalla completa</span></span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================ 02 · QUIÉN ESTÁ DETRÁS DEL CÓDIGO (SOLO PERSONAL Y PASATIEMPOS) ============================ -->
+    <section class="slide" data-titulo-es="¿Quién soy?" data-titulo-en="Who am I?">
+      <div class="max-w-5xl mx-auto w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div class="lg:col-span-5 reveal">
+            <div class="rounded-card overflow-hidden border border-zinc-700 bg-surface aspect-[4/4.3]">
+              <img src="yo.jpeg" alt="Víctor Manuel Alzate" class="w-full h-full object-cover object-center" />
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 space-y-6">
+            <div>
+              <span class="reveal text-xs font-bold uppercase tracking-wider text-zinc-300" data-i18n="s2_eyebrow">01 ·
+                Quién está detrás del código</span>
+              <h2 class="reveal d1 font-display text-3xl sm:text-5xl font-semibold text-white mt-3 leading-tight">
+                <span data-i18n="s2_title_a">Curiosidad por explorar,</span> <span class="text-zinc-400"
+                  data-i18n="s2_title_b">calma para observar</span>
+              </h2>
+            </div>
+
+            <div class="reveal d2 space-y-4">
+              <p class="text-lg text-zinc-100 leading-relaxed" data-i18n="s2_bio1">
+                Tengo <strong class="text-white">25 años</strong> y vivo en <strong class="text-white">Tuluá,
+                  Colombia</strong>. Más allá de la pantalla, disfruto <strong class="text-white">viajar y conocer
+                  lugares nuevos</strong>, dejándome sorprender por la cultura y los detalles de cada destino.
+              </p>
+              <p class="text-base text-zinc-200 leading-relaxed" data-i18n="s2_bio2">
+                Me encanta <strong class="text-white">caminar con calma para contemplar los paisajes</strong> que me
+                rodean y desconectar del ritmo diario. La <strong class="text-white">música</strong> también es parte
+                esencial de mi vida, especialmente sentarme frente al <strong class="text-white">piano</strong> a
+                interpretar y explorar nuevas melodías.
+              </p>
+            </div>
+
+            <div class="reveal d3 pt-5 border-t border-zinc-700 text-sm text-zinc-200 overflow-x-auto">
+              <p class="whitespace-nowrap">
+                <strong class="text-white" data-i18n="fact_age_val">25 años</strong>
+                <span class="text-zinc-500 mx-2">·</span>
+                <strong class="text-white">Cali, Colombia</strong>
+                <span class="text-zinc-500 mx-2">·</span>
+                <span data-i18n="fact_hobbies">Viajes · Paisajes · Piano</span>
+                <span class="text-zinc-500 mx-2">·</span>
+                <span data-i18n="fact_lang_val">Español Nativo · Inglés B1</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 03 · TRAYECTORIA PROFESIONAL (FUSIONADA Y CONCISA) ============================ -->
+    <section class="slide" data-titulo-es="Trayectoria" data-titulo-en="Career Path">
+      <div class="max-w-6xl mx-auto w-full">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+          <div>
+            <span class="reveal text-xs font-bold uppercase tracking-wider text-zinc-300" data-i18n="s3_eyebrow">02 ·
+              Trayectoria profesional</span>
+            <h2 class="reveal d1 font-display text-3xl sm:text-5xl font-semibold text-white mt-2 leading-tight">
+              <span data-i18n="s3_title_a">De código backend a liderar</span> <span class="text-zinc-400"
+                data-i18n="s3_title_b">datos e IA</span>
+            </h2>
+          </div>
+          <div class="reveal d1 text-left md:text-right">
+            <span class="font-display text-3xl sm:text-4xl font-semibold text-white tabular">4 roles</span>
+            <span class="block text-xs text-zinc-300" data-i18n="s3_sub_stat">en menos de 2 años en Dataico</span>
+          </div>
+        </div>
+
+        <ol class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+          <li class="reveal d1 bg-surface border border-zinc-700 rounded-card p-6 flex flex-col tray-card">
+            <div class="flex items-center justify-between mb-4">
+              <span
+                class="w-8 h-8 rounded-full bg-zinc-800 border border-zinc-600 text-white flex items-center justify-center font-display font-semibold text-xs">1</span>
+              <span class="text-xs font-mono text-zinc-300">2022</span>
+            </div>
+            <h3 class="font-display font-semibold text-lg text-white mb-1.5">OL Software</h3>
+            <p class="text-sm text-zinc-200 leading-relaxed" data-i18n="s3_p1_desc">
+              Backend Intern con APIs Node.js, Express y React bajo Scrum.
+            </p>
+          </li>
+
+          <li class="reveal d2 bg-surface border border-zinc-700 rounded-card p-6 flex flex-col tray-card">
+            <div class="flex items-center justify-between mb-4">
+              <span
+                class="w-8 h-8 rounded-full bg-zinc-800 border border-zinc-600 text-white flex items-center justify-center font-display font-semibold text-xs">2</span>
+              <span class="text-xs font-mono text-zinc-300">2023 – 2026</span>
+            </div>
+            <h3 class="font-display font-semibold text-lg text-white mb-1.5">Univalle & Cloud</h3>
+            <p class="text-sm text-zinc-200 leading-relaxed" data-i18n="s3_p2_desc">
+              Ing. en Sistemas + cert. en Stanford ML, Meta Python, AWS, GKE y n8n.
+            </p>
+          </li>
+
+          <li class="reveal d3 bg-surface border border-zinc-700 rounded-card p-6 flex flex-col tray-card">
+            <div class="flex items-center justify-between mb-4">
+              <span
+                class="w-8 h-8 rounded-full bg-zinc-800 border border-zinc-600 text-white flex items-center justify-center font-display font-semibold text-xs">3</span>
+              <span class="text-xs font-mono text-zinc-300">2025 · Dataico</span>
+            </div>
+            <h3 class="font-display font-semibold text-lg text-white mb-1.5">Intern → Analyst</h3>
+            <p class="text-sm text-zinc-200 leading-relaxed" data-i18n="s3_p3_desc">
+              ETL en Python, SQL BigQuery, cohortes Metabase, n8n y modelos ML.
+            </p>
+          </li>
+
+          <li class="reveal d4 bg-white text-void rounded-card p-6 shadow-xl flex flex-col tray-card">
+            <div class="flex items-center justify-between mb-4">
+              <span
+                class="w-8 h-8 rounded-full bg-void text-white flex items-center justify-center font-display font-bold text-xs">4</span>
+              <span class="text-xs font-mono font-bold text-zinc-700" data-i18n="s3_now">2026 · Hoy</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-void mb-1.5">Growth & AI Engineer</h3>
+            <p class="text-sm text-zinc-800 leading-relaxed" data-i18n="s3_p4_desc">
+              Agentes IA en producción, fábrica SEO y portal para +2,000 aliados.
+            </p>
+          </li>
+        </ol>
+
+        <div
+          class="reveal d3 pt-5 border-t border-zinc-800 flex flex-wrap justify-between items-center gap-4 text-sm text-zinc-200">
+          <div class="flex flex-wrap items-center gap-3 font-mono text-xs sm:text-sm">
+            <span>Growth Intern</span>
+            <span class="text-zinc-500">→</span>
+            <span>Growth Analyst</span>
+            <span class="text-zinc-500">→</span>
+            <span>Growth Engineer</span>
+            <span class="text-zinc-500">→</span>
+            <strong class="text-white">Growth & AI Engineer</strong>
+          </div>
+          <div class="text-xs sm:text-sm text-zinc-300" data-i18n="s3_footer">
+            <strong class="text-white">+12</strong> herramientas · <strong class="text-white">+2,000</strong> aliados ·
+            <strong class="text-white">Horas → Segundos</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 04 · MÉTODO DE INGENIERÍA (TU FLUJO REAL DE 5 ETAPAS) ============================ -->
+    <section class="slide" data-titulo-es="Cómo trabajo" data-titulo-en="How I work">
+      <div class="max-w-6xl mx-auto w-full">
+        <div class="text-center mb-6">
+          <span class="reveal text-xs font-bold uppercase tracking-wider text-zinc-300" data-i18n="s4_eyebrow">03 ·
+            Método de ingeniería</span>
+          <h2 class="reveal d1 font-display text-3xl sm:text-5xl font-medium text-white mt-3 leading-tight">
+            <span data-i18n="s4_title_a">Entender, replicar, automatizar</span> <span class="text-zinc-400"
+              data-i18n="s4_title_b">y escalar</span>
+          </h2>
+        </div>
+
+        <div class="reveal d2 hidden md:block relative mx-auto w-full"
+          style="max-width: 960px; aspect-ratio: 960 / 500;">
+          <svg id="anilloFlujo" viewBox="0 0 960 500" class="absolute inset-0 w-full h-full" aria-hidden="true"></svg>
+
+          <div class="absolute text-center" style="left: 50%; top: 50%; transform: translate(-50%, -50%); width: 32%;">
+            <p class="font-display font-medium text-white text-xl leading-snug" data-i18n="s4_center">
+              Si hay algo por mejorar,<br><span class="text-zinc-300">vuelve a empezar el ciclo</span>
+            </p>
+          </div>
+
+          <div id="nodosFlujo"></div>
+        </div>
+
+        <div id="nodosFlujoMovil" class="reveal d2 md:hidden divide-y divide-zinc-800"></div>
+      </div>
+    </section>
+
+    <!-- ============================ 05 · PROYECTO 1: FÁBRICA DE HERRAMIENTAS SEO ============================ -->
+    <section class="slide" data-titulo-es="Proyecto 01 · Fábrica SEO" data-titulo-en="Project 01 · SEO Factory">
+      <div class="max-w-5xl mx-auto w-full">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
+          <div class="flex items-center gap-5 reveal">
+            <!-- Logo: Fábrica de páginas web -->
+            <div
+              class="w-16 h-16 rounded-2xl bg-surface border border-zinc-700 flex items-center justify-center shrink-0 proj-logo">
+              <svg viewBox="0 0 64 64" class="w-10 h-10" fill="none" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <path d="M8 54V28L20 35V28L32 35V24H56V54H8Z" stroke="#FFFFFF" stroke-width="2.5"
+                  stroke-linejoin="round" />
+                <path d="M44 24V12H52V24" stroke="#FFFFFF" stroke-width="2.5" stroke-linejoin="round" />
+                <rect x="24" y="8" width="16" height="12" rx="2" fill="#141417" stroke="#FFFFFF" stroke-width="2.2" />
+                <path d="M24 12H40" stroke="#FFFFFF" stroke-width="2" />
+                <path d="M29 16L31 17.5L29 19M35 16L33 17.5L35 19" stroke="#D4D4D8" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <rect x="14" y="42" width="6" height="5" fill="#FFFFFF" />
+                <rect x="26" y="42" width="6" height="5" fill="#FFFFFF" />
+                <rect x="38" y="42" width="12" height="12" stroke="#FFFFFF" stroke-width="2" />
+              </svg>
+            </div>
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-zinc-300" data-i18n="s5_eyebrow">Proyecto 01
+                · Engineering as Marketing</span>
+              <h2 class="font-display text-3xl sm:text-4xl font-semibold text-white mt-1 leading-tight">
+                <span data-i18n="s5_title">Fábrica de Herramientas SEO</span>
+              </h2>
+            </div>
+          </div>
+
+          <div class="reveal d1 flex flex-wrap items-center gap-3">
+            <button type="button" onclick="openProjectModal('p1')"
+              class="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-200 hover:text-white border border-zinc-700 hover:border-zinc-500 px-4 py-2.5 rounded-lg transition-colors">
+              <i data-lucide="plus-circle" class="w-4 h-4"></i>
+              <span data-i18n="btn_details">Ver más detalles</span>
+            </button>
+            <a href="https://herramientas.dataico.com/" target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-xs font-bold bg-white text-void hover:bg-zinc-200 transition-colors">
+              <span>herramientas.dataico.com</span>
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Problema -> Impacto (sin texto largo) -->
+        <div class="reveal d2 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-stretch gap-4 mb-10">
+          <div class="bg-surface border border-zinc-700 rounded-card p-8 prob-card">
+            <p class="text-xs font-bold uppercase tracking-wider text-zinc-300 mb-3" data-i18n="lbl_problem">Qué
+              problema había</p>
+            <p class="font-display text-xl sm:text-2xl font-medium text-white leading-snug" data-i18n="s5_prob">
+              Crear cada herramienta gratuita de adquisición tomaba entre 2 y 3 semanas de desarrollo manual.
+            </p>
+          </div>
+          <div class="hidden md:flex items-center text-zinc-400"><i data-lucide="arrow-right" class="w-6 h-6"></i></div>
+          <div class="bg-white rounded-card p-8 prob-card">
+            <p class="text-xs font-bold uppercase tracking-wider text-zinc-700 mb-3" data-i18n="lbl_impact">Qué impacto
+              tuvo</p>
+            <p class="font-display text-xl sm:text-2xl font-semibold text-void leading-snug" data-i18n="s5_imp">
+              Lanzamiento en 1–2 días con +12 herramientas activas, +20,000 visitas y ~5,700 leads.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal d3 pt-6 border-t border-zinc-800 grid grid-cols-2 sm:grid-cols-4 gap-6">
+          <div>
+            <span class="font-display text-3xl font-semibold text-white tabular block" data-i18n="s5_m1_v">1–2
+              días</span>
+            <span class="text-xs text-zinc-300 mt-1 block" data-i18n="s5_m1_l">Tiempo de salida (antes 3 sem)</span>
+          </div>
+          <div>
+            <span class="font-display text-3xl font-semibold text-white tabular block">+12</span>
+            <span class="text-xs text-zinc-300 mt-1 block" data-i18n="s5_m2_l">Herramientas publicadas</span>
+          </div>
+          <div>
+            <span class="font-display text-3xl font-semibold text-white tabular block">+20,000</span>
+            <span class="text-xs text-zinc-300 mt-1 block" data-i18n="s5_m3_l">Visitas orgánicas (16 sem)</span>
+          </div>
+          <div>
+            <span class="font-display text-3xl font-semibold text-white tabular block">218</span>
+            <span class="text-xs text-zinc-300 mt-1 block" data-i18n="s5_m4_l">Setups (~$24M COP retorno)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 06 · PROYECTO 2: EL SEÑOR DEL DATO ============================ -->
+    <section class="slide" data-titulo-es="Proyecto 02 · El Señor del Dato"
+      data-titulo-en="Project 02 · El Señor del Dato">
+      <div class="max-w-5xl mx-auto w-full">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
+          <div class="flex items-center gap-5 reveal">
+            <!-- Logo: Búho con corona -->
+            <div
+              class="w-16 h-16 rounded-2xl bg-surface border border-zinc-700 flex items-center justify-center shrink-0 proj-logo">
+              <svg viewBox="0 0 64 64" class="w-10 h-10" fill="none" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <!-- Corona -->
+                <path d="M20 19L23 9L29 15L32 7L35 15L41 9L44 19H20Z" stroke="#FFFFFF" stroke-width="2.3"
+                  stroke-linejoin="round" fill="#141417" />
+                <!-- Cabeza y cuerpo del búho -->
+                <path d="M16 26C16 21 21 19 32 19C43 19 48 21 48 26V40C48 49 41 55 32 55C23 55 16 49 16 40V26Z"
+                  stroke="#FFFFFF" stroke-width="2.5" stroke-linejoin="round" />
+                <!-- Orejas -->
+                <path d="M17 24L13 18L21 21M47 24L51 18L43 21" stroke="#FFFFFF" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <!-- Ojos -->
+                <circle cx="25" cy="31" r="5" stroke="#FFFFFF" stroke-width="2.2" />
+                <circle cx="39" cy="31" r="5" stroke="#FFFFFF" stroke-width="2.2" />
+                <circle cx="25" cy="31" r="1.8" fill="#FFFFFF" />
+                <circle cx="39" cy="31" r="1.8" fill="#FFFFFF" />
+                <!-- Pico -->
+                <path d="M29.5 36L32 40.5L34.5 36H29.5Z" fill="#FFFFFF" />
+                <!-- Plumas del pecho -->
+                <path d="M25 45C27.5 47 36.5 47 39 45" stroke="#D4D4D8" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-zinc-300" data-i18n="s6_eyebrow">Iniciativa
+                propia · Proyecto 02</span>
+              <h2 class="font-display text-3xl sm:text-4xl font-semibold text-white mt-1 leading-tight">
+                «El Señor del Dato»
+              </h2>
+            </div>
+          </div>
+
+          <div class="reveal d1">
+            <button type="button" onclick="openProjectModal('p2')"
+              class="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-200 hover:text-white border border-zinc-700 hover:border-zinc-500 px-4 py-2.5 rounded-lg transition-colors">
+              <i data-lucide="plus-circle" class="w-4 h-4"></i>
+              <span data-i18n="btn_details">Ver más detalles</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Problema -> Impacto -->
+        <div class="reveal d2 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-stretch gap-4 mb-10">
+          <div class="bg-surface border border-zinc-700 rounded-card p-8 prob-card">
+            <p class="text-xs font-bold uppercase tracking-wider text-zinc-300 mb-3" data-i18n="lbl_problem">Qué
+              problema había</p>
+            <p class="font-display text-xl sm:text-2xl font-medium text-white leading-snug" data-i18n="s6_prob">
+              Datos dispersos en múltiples plataformas que requerían horas de consultas SQL manuales para el equipo.
+            </p>
+          </div>
+          <div class="hidden md:flex items-center text-zinc-400"><i data-lucide="arrow-right" class="w-6 h-6"></i></div>
+          <div class="bg-white rounded-card p-8 prob-card">
+            <p class="text-xs font-bold uppercase tracking-wider text-zinc-700 mb-3" data-i18n="lbl_impact">Qué impacto
+              tuvo</p>
+            <p class="font-display text-xl sm:text-2xl font-semibold text-void leading-snug" data-i18n="s6_imp">
+              Respuestas confiables en segundos dentro de Slack, adopción total en Growth y ahorro directo de horas
+              operativas.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal d3 pt-6 border-t border-zinc-800 grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div>
+            <span class="font-display text-2xl sm:text-3xl font-semibold text-white block" data-i18n="s6_m1_v">Horas →
+              Segundos</span>
+            <span class="text-xs text-zinc-300 mt-1 block" data-i18n="s6_m1_l">Cruces multi-fuente en lenguaje
+              natural</span>
+          </div>
+          <div>
+            <span class="font-display text-2xl sm:text-3xl font-semibold text-white block" data-i18n="s6_m2_v">100%
+              Trazable</span>
+            <span class="text-xs text-zinc-300 mt-1 block" data-i18n="s6_m2_l">Permisos por rol y costo por
+              consulta</span>
+          </div>
+          <div>
+            <span class="font-display text-2xl sm:text-3xl font-semibold text-white block" data-i18n="s6_m3_v">Memoria
+              activa</span>
+            <span class="text-xs text-zinc-300 mt-1 block" data-i18n="s6_m3_l">Aprende reglas cuando el equipo lo
+              corrige</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 07 · PROYECTO 3: PORTAL DE CONTADORES 2.0 ============================ -->
+    <section class="slide" data-titulo-es="Proyecto 03 · Portal Contadores"
+      data-titulo-en="Project 03 · Accountants Portal">
+      <div class="max-w-5xl mx-auto w-full">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
+          <div class="flex items-center gap-5 reveal">
+            <!-- Logo: Portal dual / Balanza contable -->
+            <div
+              class="w-16 h-16 rounded-2xl bg-surface border border-zinc-700 flex items-center justify-center shrink-0 proj-logo">
+              <svg viewBox="0 0 64 64" class="w-10 h-10" fill="none" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <!-- Arco de portal -->
+                <path d="M14 52V28C14 18 22 10 32 10C42 10 50 18 50 28V52" stroke="#FFFFFF" stroke-width="2.5"
+                  stroke-linecap="round" />
+                <!-- Dos caras del portal (Cliente + Operación) -->
+                <path d="M32 18V52" stroke="#D4D4D8" stroke-width="2" stroke-dasharray="3 3" />
+                <rect x="19" y="29" width="9" height="15" rx="1.5" stroke="#FFFFFF" stroke-width="2" />
+                <rect x="36" y="25" width="9" height="19" rx="1.5" fill="#FFFFFF" />
+                <!-- Base -->
+                <path d="M9 52H55" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-zinc-300" data-i18n="s7_eyebrow">Iniciativa
+                propia · Proyecto 03</span>
+              <h2 class="font-display text-3xl sm:text-4xl font-semibold text-white mt-1 leading-tight">
+                Portal de Contadores <span class="text-zinc-400">2.0</span>
+              </h2>
+            </div>
+          </div>
+
+          <div class="reveal d1 flex flex-wrap items-center gap-3">
+            <button type="button" onclick="openProjectModal('p3')"
+              class="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-200 hover:text-white border border-zinc-700 hover:border-zinc-500 px-4 py-2.5 rounded-lg transition-colors">
+              <i data-lucide="plus-circle" class="w-4 h-4"></i>
+              <span data-i18n="btn_details">Ver más detalles</span>
+            </button>
+            <a href="https://portal-contadores.apps.dataico.world/" target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-xs font-bold bg-white text-void hover:bg-zinc-200 transition-colors">
+              <span>portal-contadores.apps.dataico.world</span>
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Problema -> Impacto -->
+        <div class="reveal d2 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-stretch gap-4 mb-10">
+          <div class="bg-surface border border-zinc-700 rounded-card p-8 prob-card">
+            <p class="text-xs font-bold uppercase tracking-wider text-zinc-300 mb-3" data-i18n="lbl_problem">Qué
+              problema había</p>
+            <p class="font-display text-xl sm:text-2xl font-medium text-white leading-snug" data-i18n="s7_prob">
+              Gestión manual de referidos y correos en HubSpot, poca visibilidad para aliados y riesgo de pagos
+              duplicados.
+            </p>
+          </div>
+          <div class="hidden md:flex items-center text-zinc-400"><i data-lucide="arrow-right" class="w-6 h-6"></i></div>
+          <div class="bg-white rounded-card p-8 prob-card">
+            <p class="text-xs font-bold uppercase tracking-wider text-zinc-700 mb-3" data-i18n="lbl_impact">Qué impacto
+              tuvo</p>
+            <p class="font-display text-xl sm:text-2xl font-semibold text-void leading-snug" data-i18n="s7_imp">
+              +2,000 aliados centralizados, 0 pagos duplicados y ~5 horas semanales ahorradas con operación 1-clic.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal d3 pt-6 border-t border-zinc-800 grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div>
+            <span class="font-display text-3xl font-semibold text-white tabular block">+2,000</span>
+            <span class="text-xs text-zinc-300 mt-1 block" data-i18n="s7_m1_l">Contadores y distribuidores
+              activos</span>
+          </div>
+          <div>
+            <span class="font-display text-3xl font-semibold text-white tabular block" data-i18n="s7_m2_v">0
+              duplicados</span>
+            <span class="text-xs text-zinc-300 mt-1 block" data-i18n="s7_m2_l">Controles financieros automáticos</span>
+          </div>
+          <div>
+            <span class="font-display text-3xl font-semibold text-white tabular block">~5h / sem</span>
+            <span class="text-xs text-zinc-300 mt-1 block" data-i18n="s7_m3_l">Trabajo operativo ahorrado</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 08 · CAJA DE HERRAMIENTAS (TECH STACK) ============================ -->
+    <section class="slide" data-titulo-es="Tech Stack" data-titulo-en="Tech Stack">
+      <div class="max-w-5xl mx-auto w-full">
+        <div class="text-center mb-12">
+          <span class="reveal text-xs font-bold uppercase tracking-wider text-zinc-300" data-i18n="s8_eyebrow">04 · Caja
+            de herramientas</span>
+          <h2 class="reveal d1 font-display text-3xl sm:text-5xl font-medium text-white mt-3 leading-tight"
+            data-i18n="s8_title">
+            Tecnologías que uso en producción
+          </h2>
+        </div>
+
+        <div class="reveal d2 grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div class="border-t-2 border-white pt-5">
+            <h3 class="font-display font-semibold text-xl text-white mb-1" data-i18n="stack_c1">Desarrollo & Cloud</h3>
+            <p class="text-xs text-zinc-300 mb-5" data-i18n="stack_c1_s">Backend, web e infraestructura</p>
+            <ul class="space-y-3 text-sm font-medium text-zinc-100">
+              <li class="flex items-center gap-3 stack-item"><i
+                  class="devicon-python-plain text-lg text-white"></i><span>Python</span></li>
+              <li class="flex items-center gap-3 stack-item"><i
+                  class="devicon-javascript-plain text-lg text-white"></i><span>JavaScript (ES6+)</span></li>
+              <li class="flex items-center gap-3 stack-item"><i
+                  class="devicon-nodejs-plain text-lg text-white"></i><span>Node.js & Express</span></li>
+              <li class="flex items-center gap-3 stack-item"><i
+                  class="devicon-react-original text-lg text-white"></i><span>React</span></li>
+              <li class="flex items-center gap-3 stack-item"><i
+                  class="devicon-docker-plain text-lg text-white"></i><span>Docker</span></li>
+              <li class="flex items-center gap-3 stack-item"><i
+                  class="devicon-amazonwebservices-plain-wordmark text-lg text-white"></i><span>AWS & Kubernetes</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="border-t-2 border-white pt-5">
+            <h3 class="font-display font-semibold text-xl text-white mb-1" data-i18n="stack_c2">Datos & Analítica</h3>
+            <p class="text-xs text-zinc-300 mb-5" data-i18n="stack_c2_s">SQL, almacenes y BI</p>
+            <ul class="space-y-3 text-sm font-medium text-zinc-100">
+              <li class="flex items-center gap-3 stack-item"><i
+                  class="devicon-postgresql-plain text-lg text-white"></i><span>PostgreSQL</span></li>
+              <li class="flex items-center gap-3 stack-item"><i
+                  class="devicon-googlecloud-plain text-lg text-white"></i><span>Google BigQuery</span></li>
+              <li class="flex items-center gap-3 stack-item"><i
+                  class="devicon-azuresqldatabase-plain text-lg text-white"></i><span>SQL Avanzado</span></li>
+              <li class="flex items-center gap-3 stack-item"><i data-lucide="bar-chart-3"
+                  class="w-4 h-4 text-white"></i><span>GA4 & Search Console</span></li>
+              <li class="flex items-center gap-3 stack-item"><i data-lucide="activity"
+                  class="w-4 h-4 text-white"></i><span>Metabase</span></li>
+              <li class="flex items-center gap-3 stack-item"><i data-lucide="pie-chart"
+                  class="w-4 h-4 text-white"></i><span>Looker Studio</span></li>
+            </ul>
+          </div>
+
+          <div class="border-t-2 border-white pt-5">
+            <h3 class="font-display font-semibold text-xl text-white mb-1" data-i18n="stack_c3">IA & Automatización</h3>
+            <p class="text-xs text-zinc-300 mb-5" data-i18n="stack_c3_s">Agentes, skills e integraciones</p>
+            <ul class="space-y-3 text-sm font-medium text-zinc-100">
+              <li class="flex items-center gap-3 stack-item"><i data-lucide="sparkle"
+                  class="w-4 h-4 text-white"></i><span>Claude / AI Skills</span></li>
+              <li class="flex items-center gap-3 stack-item"><i data-lucide="bot"
+                  class="w-4 h-4 text-white"></i><span>OpenAI APIs</span></li>
+              <li class="flex items-center gap-3 stack-item"><i data-lucide="terminal"
+                  class="w-4 h-4 text-white"></i><span>RAG & Text-to-SQL</span></li>
+              <li class="flex items-center gap-3 stack-item"><i data-lucide="repeat"
+                  class="w-4 h-4 text-white"></i><span>n8n Workflows</span></li>
+              <li class="flex items-center gap-3 stack-item"><i
+                  class="devicon-slack-plain text-lg text-white"></i><span>Slack APIs</span></li>
+              <li class="flex items-center gap-3 stack-item"><i data-lucide="share-2"
+                  class="w-4 h-4 text-white"></i><span>HubSpot & Sheets API</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 09 · MI DIFERENCIAL ============================ -->
+    <section class="slide" data-titulo-es="Mi diferencial" data-titulo-en="What sets me apart">
+      <div class="max-w-5xl mx-auto w-full">
+        <div class="mb-12">
+          <span class="reveal text-xs font-bold uppercase tracking-wider text-zinc-300" data-i18n="s9_eyebrow">05 ·
+            Enfoque y diferencial</span>
+          <h2 class="reveal d1 font-display text-3xl sm:text-5xl font-medium text-white mt-3 leading-tight"
+            data-i18n="s9_title">
+            Lo que sumo a un equipo
+          </h2>
+        </div>
+
+        <div class="reveal d2 grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div class="border-t-2 border-white pt-5 space-y-3 diff-col">
+            <span class="font-mono text-xs font-bold text-zinc-300">01</span>
+            <h3 class="font-display font-semibold text-xl text-white" data-i18n="fc1_ft">Puente código y negocio</h3>
+            <p class="text-sm text-zinc-200 leading-relaxed" data-i18n="fc1_fd">Entiendo cómo cada línea de código
+              impacta en adquisición, retención y costos operativos.</p>
+            <p class="text-xs text-zinc-200 leading-relaxed pt-3 border-t border-zinc-800" data-i18n="fc1_bd">
+              <strong class="text-white">Prueba:</strong> Herramientas SEO gratuitas con +20,000 visitas, ~5,700 leads y
+              218 setups.
+            </p>
+          </div>
+
+          <div class="border-t-2 border-white pt-5 space-y-3 diff-col">
+            <span class="font-mono text-xs font-bold text-zinc-300">02</span>
+            <h3 class="font-display font-semibold text-xl text-white" data-i18n="fc2_ft">Iniciativa sin esperar ticket
+            </h3>
+            <p class="text-sm text-zinc-200 leading-relaxed" data-i18n="fc2_fd">Observo los flujos diarios, detecto
+              dónde se pierde tiempo o dinero y construyo la solución completa.</p>
+            <p class="text-xs text-zinc-200 leading-relaxed pt-3 border-t border-zinc-800" data-i18n="fc2_bd">
+              <strong class="text-white">Prueba:</strong> «El Señor del Dato» y «Portal de Contadores 2.0» nacieron 100%
+              por iniciativa propia.
+            </p>
+          </div>
+
+          <div class="border-t-2 border-white pt-5 space-y-3 diff-col">
+            <span class="font-mono text-xs font-bold text-zinc-300">03</span>
+            <h3 class="font-display font-semibold text-xl text-white" data-i18n="fc3_ft">Velocidad multiplicada con IA
+            </h3>
+            <p class="text-sm text-zinc-200 leading-relaxed" data-i18n="fc3_fd">Combino ingeniería clásica con agentes y
+              skills de IA para entregar en días lo que tomaba semanas.</p>
+            <p class="text-xs text-zinc-200 leading-relaxed pt-3 border-t border-zinc-800" data-i18n="fc3_bd">
+              <strong class="text-white">Prueba:</strong> Herramientas web de 3 semanas a 1–2 días y atribución de 3
+              horas a segundos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ 10 · CIERRE Y CONTACTO ============================ -->
+    <section class="slide" data-titulo-es="Conversemos" data-titulo-en="Let's Talk">
+      <div class="max-w-4xl mx-auto w-full">
+        <div class="reveal bg-white text-void rounded-card p-10 sm:p-14 md:p-16 text-center closing-card">
+          <h2 class="font-display text-3xl sm:text-5xl font-semibold text-void mb-5 leading-tight"
+            data-i18n="s10_title">
+            ¿Cuál es el primer problema que vamos a resolver?
+          </h2>
+          <p class="text-zinc-700 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed mb-10" data-i18n="s10_sub">
+            Código, datos e inteligencia artificial práctica listos para sumar en nuevos retos.
+          </p>
+
+          <div class="flex flex-wrap items-center justify-center gap-3 mb-10">
+            <button type="button" onclick="copyEmailToClipboard()"
+              class="inline-flex items-center gap-2.5 bg-void hover:bg-zinc-800 text-white font-semibold text-sm px-5 py-3.5 rounded-lg border border-zinc-700 transition-colors">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+              <span>victoralzate61@gmail.com</span>
+            </button>
+
+            <a href="https://wa.me/573215701498?text=Hola%20V%C3%ADctor%2C%20vi%20tu%20portafolio%20y%20quiero%20conversar."
+              target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center gap-2.5 bg-void hover:bg-zinc-800 text-white font-semibold text-sm px-5 py-3.5 rounded-lg border border-zinc-700 transition-colors">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                <path
+                  d="M12.004 2.003C6.477 2.003 2 6.479 2 12.006c0 1.853.487 3.593 1.337 5.102L2 22l5.064-1.316A9.955 9.955 0 0012.004 22C17.53 22 22 17.524 22 12.006 22 6.479 17.53 2.003 12.004 2.003zm0 18.18a8.164 8.164 0 01-4.17-1.146l-.299-.178-3.005.781.804-2.925-.196-.301A8.148 8.148 0 013.838 12c0-4.509 3.669-8.178 8.166-8.178 4.498 0 8.168 3.669 8.168 8.178 0 4.51-3.67 8.183-8.168 8.183z" />
+              </svg>
+              <span>WhatsApp</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/victoralzate/" target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center gap-2.5 bg-void hover:bg-zinc-800 text-white font-semibold text-sm px-5 py-3.5 rounded-lg border border-zinc-700 transition-colors">
+              <i class="devicon-linkedin-plain text-base"></i>
+              <span>LinkedIn</span>
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <div
+            class="pt-6 border-t border-zinc-300 flex flex-wrap justify-center items-center gap-x-4 gap-y-2 text-xs text-zinc-700">
+            <span data-i18n="log_mode_v">Remoto / Híbrido (CO o Global)</span>
+            <span>·</span>
+            <span data-i18n="log_lang_v">Español Nativo · Inglés B1</span>
+            <span>·</span>
+            <span class="text-void font-bold" data-i18n="log_focus_v">Software, Datos, Automatización e IA</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================ MODAL DETALLES Y ARQUITECTURA ============================ -->
+  <div id="projectModal"
+    class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+    onclick="if(event.target === this) closeProjectModal()">
+    <div class="bg-surface border border-zinc-700 rounded-card max-w-2xl w-full p-7 sm:p-8 shadow-2xl relative">
+      <button type="button" onclick="closeProjectModal()" aria-label="Cerrar"
+        class="absolute top-5 right-5 w-9 h-9 rounded-lg bg-void border border-zinc-700 text-zinc-200 hover:text-white flex items-center justify-center transition-colors">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+      <span id="modalEyebrow" class="text-xs font-bold uppercase tracking-wider text-zinc-300 block mb-2"></span>
+      <h3 id="modalTitle" class="font-display text-2xl font-semibold text-white mb-5 pr-8"></h3>
+      <div id="modalBody" class="space-y-3 text-sm text-zinc-200 leading-relaxed"></div>
+    </div>
+  </div>
+
+  <!-- Toast de confirmación -->
+  <div id="toast-banner"
+    class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-lg bg-white text-void font-semibold text-xs sm:text-sm shadow-xl opacity-0 pointer-events-none transition-all duration-300 translate-y-4">
+    <span id="toast-message"></span>
+  </div>
+
+  <script>
+    /* ============================================================
+       1. DICCIONARIO BILINGÜE ES / EN
+    ============================================================ */
+    const I18N = {
+      es: {
+        hdr_role: "Ingeniero en Sistemas · Datos & IA",
+        s1_pill: "Tuluá, Colombia · Ingeniero en Sistemas · Datos & IA",
+        s1_sub: "Construyo soluciones donde convergen código, datos e inteligencia artificial para eliminar cuellos de botella reales y acelerar el negocio.",
+        s1_cta: "Empezar recorrido",
+        s1_cta_proj: "Ir directo a proyectos",
+        hint_scroll: "o rueda del mouse para avanzar",
+        hint_fs: "pantalla completa",
+        s2_eyebrow: "01 · Quién está detrás del código",
+        s2_title_a: "Curiosidad por explorar,",
+        s2_title_b: "calma para observar",
+        s2_bio1: 'Tengo <strong class="text-white">25 años</strong> y vivo en <strong class="text-white">Tuluá, Colombia</strong>. Más allá de la pantalla, disfruto <strong class="text-white">viajar y conocer lugares nuevos</strong>, dejándome sorprender por la cultura y los detalles de cada destino.',
+        s2_bio2: 'Me encanta <strong class="text-white">caminar con calma para contemplar los paisajes</strong> que me rodean y desconectar del ritmo diario. La <strong class="text-white">música</strong> también es parte esencial de mi vida, especialmente sentarme frente al <strong class="text-white">piano</strong> a interpretar y explorar nuevas melodías.',
+        fact_age_val: "25 años",
+        fact_hobbies: "Viajes · Paisajes · Piano",
+        fact_lang_val: "Español Nativo · Inglés B1",
+        s3_eyebrow: "02 · Trayectoria profesional",
+        s3_title_a: "De código backend a liderar",
+        s3_title_b: "datos e IA",
+        s3_sub_stat: "en menos de 2 años en Dataico",
+        s3_p1_desc: "Backend Intern con APIs Node.js, Express y React bajo Scrum.",
+        s3_p2_desc: "Ing. en Sistemas + cert. en Stanford ML, Meta Python, AWS, GKE y n8n.",
+        s3_p3_desc: "ETL en Python, SQL BigQuery, cohortes Metabase, n8n y modelos ML.",
+        s3_now: "2026 · Hoy",
+        s3_p4_desc: "Agentes IA en producción, fábrica SEO y portal para +2,000 aliados.",
+        s3_footer: '<strong class="text-white">+12</strong> herramientas · <strong class="text-white">+2,000</strong> aliados · <strong class="text-white">Horas → Segundos</strong>',
+        s4_eyebrow: "03 · Método de ingeniería",
+        s4_title_a: "Entender, replicar, automatizar",
+        s4_title_b: "y escalar",
+        s4_center: 'Si hay algo por mejorar,<br><span class="text-zinc-300">vuelve a empezar el ciclo</span>',
+        s5_eyebrow: "Proyecto 01 · Engineering as Marketing",
+        s5_title: "Fábrica de Herramientas SEO",
+        btn_details: "Ver más detalles",
+        lbl_problem: "Qué problema había",
+        lbl_impact: "Qué impacto tuvo",
+        s5_prob: "Crear cada herramienta gratuita de adquisición tomaba entre 2 y 3 semanas de desarrollo manual.",
+        s5_imp: "Lanzamiento en 1–2 días con +12 herramientas activas, +20,000 visitas y ~5,700 leads.",
+        s5_m1_v: "1–2 días",
+        s5_m1_l: "Tiempo de salida (antes 3 sem)",
+        s5_m2_l: "Herramientas publicadas",
+        s5_m3_l: "Visitas orgánicas (16 sem)",
+        s5_m4_l: "Setups (~$24M COP retorno)",
+        s6_eyebrow: "Iniciativa propia · Proyecto 02",
+        s6_prob: "Datos dispersos en múltiples plataformas que requerían horas de consultas SQL manuales para el equipo.",
+        s6_imp: "Respuestas confiables en segundos dentro de Slack, adopción total en Growth y ahorro directo de horas operativas.",
+        s6_m1_v: "Horas → Segundos",
+        s6_m1_l: "Cruces multi-fuente en lenguaje natural",
+        s6_m2_v: "100% Trazable",
+        s6_m2_l: "Permisos por rol y costo por consulta",
+        s6_m3_v: "Memoria activa",
+        s6_m3_l: "Aprende reglas cuando el equipo lo corrige",
+        s7_eyebrow: "Iniciativa propia · Proyecto 03",
+        s7_prob: "Gestión manual de referidos y correos en HubSpot, poca visibilidad para aliados y riesgo de pagos duplicados.",
+        s7_imp: "+2,000 aliados centralizados, 0 pagos duplicados y ~5 horas semanales ahorradas con operación 1-clic.",
+        s7_m1_l: "Contadores y distribuidores activos",
+        s7_m2_v: "0 duplicados",
+        s7_m2_l: "Controles financieros automáticos",
+        s7_m3_l: "Trabajo operativo ahorrado",
+        s8_eyebrow: "04 · Caja de herramientas",
+        s8_title: "Tecnologías que uso en producción",
+        stack_c1: "Desarrollo & Cloud",
+        stack_c1_s: "Backend, web e infraestructura",
+        stack_c2: "Datos & Analítica",
+        stack_c2_s: "SQL, almacenes y BI",
+        stack_c3: "IA & Automatización",
+        stack_c3_s: "Agentes, skills e integraciones",
+        s9_eyebrow: "05 · Enfoque y diferencial",
+        s9_title: "Lo que sumo a un equipo",
+        fc1_ft: "Puente código y negocio",
+        fc1_fd: "Entiendo cómo cada línea de código impacta en adquisición, retención y costos operativos.",
+        fc1_bd: '<strong class="text-white">Prueba:</strong> Herramientas SEO gratuitas con +20,000 visitas, ~5,700 leads y 218 setups.',
+        fc2_ft: "Iniciativa sin esperar ticket",
+        fc2_fd: "Observo los flujos diarios, detecto dónde se pierde tiempo o dinero y construyo la solución completa.",
+        fc2_bd: '<strong class="text-white">Prueba:</strong> «El Señor del Dato» y «Portal de Contadores 2.0» nacieron 100% por iniciativa propia.',
+        fc3_ft: "Velocidad multiplicada con IA",
+        fc3_fd: "Combino ingeniería clásica con agentes y skills de IA para entregar en días lo que tomaba semanas.",
+        fc3_bd: '<strong class="text-white">Prueba:</strong> Herramientas web de 3 semanas a 1–2 días y atribución de 3 horas a segundos.',
+        s10_title: "¿Cuál es el primer problema que vamos a resolver?",
+        s10_sub: "Código, datos e inteligencia artificial práctica listos para sumar en nuevos retos.",
+        log_mode_v: "Remoto / Híbrido (CO o Global)",
+        log_lang_v: "Español Nativo · Inglés B1",
+        log_focus_v: "Software, Datos, Automatización e IA",
+        toast_email: "Correo copiado: victoralzate61@gmail.com"
+      },
+      en: {
+        hdr_role: "Systems Engineer · Data & AI",
+        s1_pill: "Tuluá, Colombia · Systems Engineer · Data & AI",
+        s1_sub: "I build solutions where software, data, and applied AI meet to remove operational bottlenecks and drive measurable business growth.",
+        s1_cta: "Start walkthrough",
+        s1_cta_proj: "Jump to projects",
+        hint_scroll: "or scroll to advance",
+        hint_fs: "fullscreen",
+        s2_eyebrow: "01 · Behind the code",
+        s2_title_a: "Curiosity to explore,",
+        s2_title_b: "calm to observe",
+        s2_bio1: 'I am <strong class="text-white">25 years old</strong> and live in <strong class="text-white">Tuluá, Colombia</strong>. Beyond the screen, I love <strong class="text-white">traveling and discovering new places</strong>, taking in the culture and details of every destination.',
+        s2_bio2: 'I enjoy <strong class="text-white">walking calmly to appreciate the landscapes</strong> around me and recharge. <strong class="text-white">Music</strong> is also a big part of my life—especially sitting down at the <strong class="text-white">piano</strong> to play and explore new melodies.',
+        fact_age_val: "25 yrs",
+        fact_hobbies: "Travel · Landscapes · Piano",
+        fact_lang_val: "Native Spanish · English B1",
+        s3_eyebrow: "02 · Career path",
+        s3_title_a: "From backend code to leading",
+        s3_title_b: "data & AI",
+        s3_sub_stat: "in under 2 years at Dataico",
+        s3_p1_desc: "Backend Intern building Node.js, Express APIs & React under Scrum.",
+        s3_p2_desc: "Systems Eng. + Stanford ML, Meta Python, AWS, GKE & n8n certs.",
+        s3_p3_desc: "Python ETL, BigQuery SQL, Metabase cohorts, n8n & ML models.",
+        s3_now: "2026 · Today",
+        s3_p4_desc: "Production AI agents, SEO factory & portal for 2,000+ partners.",
+        s3_footer: '<strong class="text-white">12+</strong> tools · <strong class="text-white">2,000+</strong> partners · <strong class="text-white">Hours → Seconds</strong>',
+        s4_eyebrow: "03 · Engineering workflow",
+        s4_title_a: "Understand, replicate, automate",
+        s4_title_b: "& scale",
+        s4_center: 'Whenever something can improve,<br><span class="text-zinc-300">the loop starts again</span>',
+        s5_eyebrow: "Project 01 · Engineering as Marketing",
+        s5_title: "SEO Tools Factory",
+        btn_details: "View more details",
+        lbl_problem: "The problem",
+        lbl_impact: "The impact",
+        s5_prob: "Building each free organic acquisition tool used to take 2 to 3 weeks of manual engineering.",
+        s5_imp: "Shipped in 1–2 days with 12+ live tools, 20,000+ organic visits, and ~5,700 leads.",
+        s5_m1_v: "1–2 days",
+        s5_m1_l: "Time to launch (was 3 wks)",
+        s5_m2_l: "Published tools",
+        s5_m3_l: "Organic visits (16 wks)",
+        s5_m4_l: "Setups (~$24M COP return)",
+        s6_eyebrow: "Self-initiated · Project 02",
+        s6_prob: "Scattered data across multiple platforms requiring hours of manual SQL queries for the team.",
+        s6_imp: "Reliable answers in seconds inside Slack, company-wide Growth adoption, and major time savings.",
+        s6_m1_v: "Hours → Seconds",
+        s6_m1_l: "Cross-platform natural language queries",
+        s6_m2_v: "100% Traceable",
+        s6_m2_l: "Role permissions & per-query cost logs",
+        s6_m3_v: "Active memory",
+        s6_m3_l: "Stores rules whenever the team corrects it",
+        s7_eyebrow: "Self-initiated · Project 03",
+        s7_prob: "Manual referral tracking and HubSpot emails, limited partner visibility, and risk of duplicate payouts.",
+        s7_imp: "2,000+ partners centralized, 0 duplicate payouts, and ~5 ops hours saved weekly with 1-click actions.",
+        s7_m1_l: "Active accountants & partners",
+        s7_m2_v: "0 duplicates",
+        s7_m2_l: "Automated payout safeguards",
+        s7_m3_l: "Weekly ops hours saved",
+        s8_eyebrow: "04 · Toolbox",
+        s8_title: "Production technologies I work with",
+        stack_c1: "Development & Cloud",
+        stack_c1_s: "Backend, web & infra",
+        stack_c2: "Data & Analytics",
+        stack_c2_s: "SQL, warehouses & BI",
+        stack_c3: "AI & Automation",
+        stack_c3_s: "Agents, skills & integrations",
+        s9_eyebrow: "05 · Approach & edge",
+        s9_title: "What I bring to a team",
+        fc1_ft: "Bridge code & business",
+        fc1_fd: "I understand how every line of code impacts acquisition, retention, and operating cost.",
+        fc1_bd: '<strong class="text-white">Proof:</strong> Free SEO tools generating 20,000+ visits, ~5,700 leads, and 218 setups.',
+        fc2_ft: "Initiative before a ticket",
+        fc2_fd: "I observe daily workflows, spot where time or money is leaking, and ship the complete fix.",
+        fc2_bd: '<strong class="text-white">Proof:</strong> Both «El Señor del Dato» and «Accountants Portal 2.0» were 100% self-initiated.',
+        fc3_ft: "AI-multiplied velocity",
+        fc3_fd: "I pair solid engineering with AI agents and skills to ship in days what used to take weeks.",
+        fc3_bd: '<strong class="text-white">Proof:</strong> Web tool launches cut from 3 weeks to 1–2 days; attribution from 3 hours to seconds.',
+        s10_title: "What's the first problem we're going to solve?",
+        s10_sub: "Software engineering, data, and practical AI ready to create impact in new challenges.",
+        log_mode_v: "Remote / Hybrid (CO or Global)",
+        log_lang_v: "Native Spanish · English B1",
+        log_focus_v: "Software, Data, Automation & AI",
+        toast_email: "Email copied: victoralzate61@gmail.com"
+      }
+    };
+
+    const ETAPAS_FLUJO = {
+      es: [
+        { nombre: "Entender", que: "Comprender el problema o proceso actual", tags: ["diagnóstico"] },
+        { nombre: "Replicar", que: "Hacerlo paso a paso para dominarlo", tags: ["inmersión"] },
+        { nombre: "Optimizar", que: "Código y automatizaciones graduales", tags: ["scripts", "código"] },
+        { nombre: "Escalar IA", que: "Skills y agentes para crear producto", tags: ["interno / externo"] },
+        { nombre: "Medir", que: "Supervisar impacto y detectar mejoras", tags: ["métricas"] }
+      ],
+      en: [
+        { nombre: "Understand", que: "Grasp the current problem or process", tags: ["diagnosis"] },
+        { nombre: "Replicate", que: "Run it step by step to master it", tags: ["immersion"] },
+        { nombre: "Optimize", que: "Gradual code & workflow automation", tags: ["scripts", "code"] },
+        { nombre: "Scale AI", que: "Skills & agents into a real product", tags: ["internal / external"] },
+        { nombre: "Measure", que: "Monitor impact & spot improvements", tags: ["metrics"] }
+      ]
+    };
+
+    const MODAL_PROJECTS = {
+      p1: {
+        es: {
+          eyebrow: "Proyecto 01 · Cómo lo resolví",
+          title: "Fábrica de Herramientas SEO con 13 AI Skills",
+          items: [
+            "<strong class='text-white'>1. Validación de demanda:</strong> Análisis previo de volumen de búsqueda y competencia con DataForSEO antes de construir.",
+            "<strong class='text-white'>2. Orquestación modular:</strong> Diseñé 13 skills especializadas que estandarizan interfaz responsiva, lógica tributaria/laboral colombiana, copy SEO, esquemas estructurados, eventos GA4 e indexación en Google y Bing.",
+            "<strong class='text-white'>3. Puente de conversión:</strong> Cada utilidad (Nómina, Cuentas de Cobro, Visor XML, Calendario Tributario) resuelve una necesidad real y conecta naturalmente con el registro en Dataico."
+          ]
+        },
+        en: {
+          eyebrow: "Project 01 · How I solved it",
+          title: "SEO Tools Factory powered by 13 AI Skills",
+          items: [
+            "<strong class='text-white'>1. Demand validation:</strong> Search volume and SERP analysis via DataForSEO before writing code.",
+            "<strong class='text-white'>2. Modular orchestration:</strong> Built 13 specialized AI skills standardizing responsive UI, Colombian tax/payroll logic, SEO copy, structured schemas, GA4 events, and Google/Bing indexing.",
+            "<strong class='text-white'>3. Conversion bridge:</strong> Every utility solves an everyday workflow and funnels organic traffic directly into Dataico signups."
+          ]
+        }
+      },
+      p2: {
+        es: {
+          eyebrow: "Proyecto 02 · Cómo lo resolví",
+          title: "«El Señor del Dato» — Agente RAG & Text-to-SQL",
+          items: [
+            "<strong class='text-white'>Motor analítico:</strong> Traduce preguntas en lenguaje natural a SQL real sobre PostgreSQL y BigQuery (GA4), y ejecuta scripts Python para análisis estadísticos.",
+            "<strong class='text-white'>Integraciones multi-fuente:</strong> Conecta con HubSpot (tickets/contexto), Google Search Console, Bing, Google Sheets, páginas web y Slack Canvas/Listas; además planifica tareas y limpia sus propios mensajes.",
+            "<strong class='text-white'>Gobernanza y memoria activa:</strong> Segmentado por permisos de rol, registra costo y herramientas exactas por consulta, y guarda correcciones del equipo (Human-in-the-Loop) para no repetir errores."
+          ]
+        },
+        en: {
+          eyebrow: "Project 02 · How I solved it",
+          title: "«El Señor del Dato» — RAG & Text-to-SQL Agent",
+          items: [
+            "<strong class='text-white'>Analytical engine:</strong> Translates natural language into live SQL on PostgreSQL and BigQuery (GA4), and runs Python scripts for statistical analysis.",
+            "<strong class='text-white'>Multi-source integrations:</strong> Connects HubSpot tickets, Google Search Console, Bing, Google Sheets, webpages, and Slack Canvases/Lists; also drafts plans and cleans up its own messages.",
+            "<strong class='text-white'>Governance & active memory:</strong> Role-based permissions, exact per-query cost & tool logging, plus Human-in-the-Loop memory that stores team corrections."
+          ]
+        }
+      },
+      p3: {
+        es: {
+          eyebrow: "Proyecto 03 · Cómo lo resolví",
+          title: "Portal de Contadores 2.0 & Brújula de Referidores",
+          items: [
+            "<strong class='text-white'>Cara al Cliente (Autogestión):</strong> Historial en tiempo real de comisiones (pagadas/pendientes, monto y fecha), actualización bancaria validada y barra de metas (plan gratis con 3 referidos o +5% extra con 2 en el mes).",
+            "<strong class='text-white'>Operación Interna (1-Clic):</strong> Dashboard centralizado, alertas de hitos, aprobación con validación humana para cambios bancarios, controles anti-duplicados, liquidación y envío masivo de correos (sin HubSpot manual).",
+            "<strong class='text-white'>Integraciones y estrategia:</strong> Notificaciones automáticas en Slack y un simulador financiero de escenarios para evaluar incentivos antes de lanzarlos."
+          ]
+        },
+        en: {
+          eyebrow: "Project 03 · How I solved it",
+          title: "Accountants Portal 2.0 & Referrer Compass",
+          items: [
+            "<strong class='text-white'>Client-Facing (Self-Service):</strong> Real-time commission tracking (paid/pending, amount, date), validated bank account updates, and transparent milestone progress (free plan at 3 referrals or +5% monthly bonus).",
+            "<strong class='text-white'>Internal Ops (1-Click):</strong> Unified dashboard, milestone alerts, human-validated bank approvals, anti-duplication safeguards, 1-click payout lists, and automated email notifications.",
+            "<strong class='text-white'>Integrations & strategy:</strong> Real-time Slack alerts plus a financial scenario simulator to model incentives before launch."
+          ]
+        }
+      }
+    };
+
+    let currentLang = "es";
+
+    /* ============================================================
+       2. DIAGRAMA CIRCULAR DEL FLUJO
+    ============================================================ */
+    function dibujarFlujo(lang) {
+      const etapas = ETAPAS_FLUJO[lang];
+      const cx = 480, cy = 250, rx = 375, ry = 185;
+      const svg = document.getElementById("anilloFlujo");
+      const cont = document.getElementById("nodosFlujo");
+      const movil = document.getElementById("nodosFlujoMovil");
+      const ns = "http://www.w3.org/2000/svg";
+
+      svg.innerHTML = "";
+      cont.innerHTML = "";
+      movil.innerHTML = "";
+
+      const elipse = document.createElementNS(ns, "ellipse");
+      Object.entries({ cx, cy, rx, ry, fill: "none", stroke: "#3F3F46", "stroke-width": 1.5 })
+        .forEach(([k, v]) => elipse.setAttribute(k, v));
+      svg.appendChild(elipse);
+
+      const paso = (2 * Math.PI) / etapas.length;
+      const inicio = -Math.PI / 2;
+
+      etapas.forEach((e, i) => {
+        const t = inicio + paso * (i + 0.5);
+        const x = cx + rx * Math.cos(t), y = cy + ry * Math.sin(t);
+        const ang = (Math.atan2(ry * Math.cos(t), -rx * Math.sin(t)) * 180) / Math.PI;
+        const flecha = document.createElementNS(ns, "path");
+        flecha.setAttribute("d", "M -7 -8 L 5 0 L -7 8");
+        flecha.setAttribute("fill", "none");
+        flecha.setAttribute("stroke", i === etapas.length - 1 ? "#FFFFFF" : "#A1A1AA");
+        flecha.setAttribute("stroke-width", 2.5);
+        flecha.setAttribute("stroke-linecap", "round");
+        flecha.setAttribute("stroke-linejoin", "round");
+        flecha.setAttribute("transform", `translate(${x} ${y}) rotate(${ang})`);
+        svg.appendChild(flecha);
+
+        const tn = inicio + paso * i;
+        const nx = ((cx + rx * Math.cos(tn)) / 960) * 100;
+        const ny = ((cy + ry * Math.sin(tn)) / 500) * 100;
+        const nodo = document.createElement("div");
+        nodo.className = "absolute bg-surface rounded-card border border-zinc-700 px-4 py-3 text-center";
+        nodo.style.cssText = `left:${nx}%; top:${ny}%; transform:translate(-50%,-50%); width:23%;`;
+        nodo.innerHTML = `
+          <div class="flex items-center justify-center gap-2 mb-1">
+            <span class="w-6 h-6 rounded-full ${i === 0 ? "bg-white text-void" : "bg-zinc-800 border border-zinc-600 text-white"} text-xs flex items-center justify-center font-display font-bold">${i + 1}</span>
+            <span class="font-display font-semibold text-white text-base">${e.nombre}</span>
+          </div>
+          <p class="text-xs text-zinc-200 mb-2">${e.que}</p>
+          <div class="flex flex-wrap justify-center gap-1">
+            ${e.tags.map(s => `<code class="font-mono text-[10px] bg-void border border-zinc-700 text-zinc-200 rounded px-2 py-0.5">${s}</code>`).join("")}
+          </div>`;
+        cont.appendChild(nodo);
+
+        const item = document.createElement("div");
+        item.className = "py-3.5 flex items-center justify-between gap-3";
+        item.innerHTML = `
+          <div class="flex items-center gap-3">
+            <span class="w-7 h-7 rounded-full ${i === 0 ? "bg-white text-void" : "bg-zinc-800 border border-zinc-600 text-white"} text-xs font-bold flex items-center justify-center shrink-0">${i + 1}</span>
+            <div>
+              <span class="font-display font-semibold text-white text-sm block">${e.nombre}</span>
+              <span class="text-xs text-zinc-200">${e.que}</span>
+            </div>
+          </div>
+          <code class="font-mono text-[10px] text-zinc-200 bg-surface px-2 py-1 rounded border border-zinc-700 shrink-0">${e.tags[0]}</code>`;
+        movil.appendChild(item);
+      });
+    }
+
+    /* ============================================================
+       3. NAVEGACIÓN VERTICAL POR DIAPOSITIVAS
+    ============================================================ */
+    const slides = [...document.querySelectorAll(".slide")];
+    const total = slides.length;
+    const pad = n => String(n).padStart(2, "0");
+    document.getElementById("numTotal").textContent = pad(total);
+
+    const puntos = document.getElementById("puntos");
+    slides.forEach((s, i) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "dot";
+      b.setAttribute("aria-label", `Ir a ${i + 1}: ${s.dataset.tituloEs}`);
+      b.title = s.dataset.tituloEs;
+      b.addEventListener("click", () => ir(i));
+      puntos.appendChild(b);
+    });
+
+    let actual = 0;
+    let desplazandoHasta = null;
+    let finDesplazamiento = null;
+
+    function pasosDe(s) {
+      return [...s.querySelectorAll(".step")];
+    }
+
+    function mostrarTodosLosPasos(s) {
+      pasosDe(s).forEach((p, i) => setTimeout(() => p.classList.add("is-shown"), 120 * i));
+    }
+
+    function getSlideTitle(slide) {
+      return currentLang === "es" ? slide.dataset.tituloEs : slide.dataset.tituloEn;
+    }
+
+    function activar(i, porTeclado) {
+      actual = i;
+      slides.forEach((s, j) => s.classList.toggle("is-active", j === i));
+      [...puntos.children].forEach((d, j) => d.classList.toggle("is-active", j === i));
+
+      document.getElementById("numActual").textContent = pad(i + 1);
+      document.getElementById("tituloActual").textContent = getSlideTitle(slides[i]) || "";
+      document.getElementById("barraProgreso").style.width = `${(i / (total - 1)) * 100}%`;
+      history.replaceState(null, "", `#${i + 1}`);
+
+      const pasos = pasosDe(slides[i]);
+      if (pasos.length && !porTeclado && !pasos.some(p => p.classList.contains("is-shown"))) {
+        mostrarTodosLosPasos(slides[i]);
+      }
+    }
+
+    function ir(i, porTeclado = false) {
+      i = Math.max(0, Math.min(total - 1, i));
+      desplazandoHasta = i;
+      clearTimeout(finDesplazamiento);
+      finDesplazamiento = setTimeout(() => {
+        if (Math.abs(slides[i].getBoundingClientRect().top - 67) > 6) {
+          document.documentElement.style.scrollBehavior = "auto";
+          slides[i].scrollIntoView({ block: "start" });
+          document.documentElement.style.scrollBehavior = "";
+        }
+        desplazandoHasta = null;
+      }, 1100);
+
+      activar(i, porTeclado);
+      if (porTeclado) {
+        const p = pasosDe(slides[i]);
+        if (p.length && !p.some(x => x.classList.contains("is-shown"))) p[0].classList.add("is-shown");
+      }
+      slides[i].scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    window.addEventListener("scrollend", () => { desplazandoHasta = null; });
+
+    const observador = new IntersectionObserver(entradas => {
+      if (desplazandoHasta !== null) return;
+      entradas.forEach(e => {
+        if (!e.isIntersecting) return;
+        const i = slides.indexOf(e.target);
+        if (i !== actual) activar(i, false);
+      });
+    }, { threshold: 0.55 });
+    slides.forEach(s => observador.observe(s));
+
+    function avanzar() {
+      const pasos = pasosDe(slides[actual]);
+      const siguiente = pasos.find(p => !p.classList.contains("is-shown"));
+      if (siguiente) {
+        siguiente.classList.add("is-shown");
+        return;
+      }
+      if (actual < total - 1) ir(actual + 1, true);
+    }
+
+    function retroceder() {
+      if (actual > 0) ir(actual - 1, false);
+    }
+
+    document.addEventListener("keydown", e => {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      const modalOpen = !document.getElementById("projectModal").classList.contains("hidden");
+      if (e.key === "Escape" && modalOpen) {
+        closeProjectModal();
+        return;
+      }
+      if (modalOpen) return;
+
+      const k = e.key;
+      if ((k === " " || k === "Enter") && e.target.closest("button, a")) return;
+
+      if (["ArrowDown", "PageDown", " ", "ArrowRight", "Enter"].includes(k)) {
+        e.preventDefault();
+        avanzar();
+      } else if (["ArrowUp", "PageUp", "ArrowLeft"].includes(k)) {
+        e.preventDefault();
+        retroceder();
+      } else if (k === "Home") {
+        e.preventDefault();
+        ir(0);
+      } else if (k === "End") {
+        e.preventDefault();
+        ir(total - 1);
+      } else if (k === "f" || k === "F") {
+        if (!document.fullscreenElement) document.documentElement.requestFullscreen?.();
+        else document.exitFullscreen?.();
+      }
+    });
+
+    /* ============================================================
+       4. CAMBIO DE IDIOMA ES / EN
+    ============================================================ */
+    function setLanguage(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+
+      const btnEs = document.getElementById("btn-lang-es");
+      const btnEn = document.getElementById("btn-lang-en");
+      if (lang === "es") {
+        btnEs.className = "px-2 py-0.5 rounded-md text-xs font-bold transition-all bg-white text-void";
+        btnEn.className = "px-2 py-0.5 rounded-md text-xs font-bold transition-all text-zinc-300 hover:text-white";
+      } else {
+        btnEn.className = "px-2 py-0.5 rounded-md text-xs font-bold transition-all bg-white text-void";
+        btnEs.className = "px-2 py-0.5 rounded-md text-xs font-bold transition-all text-zinc-300 hover:text-white";
+      }
+
+      const dict = I18N[lang];
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (dict[key]) el.innerHTML = dict[key];
+      });
+
+      [...puntos.children].forEach((dot, idx) => {
+        const t = lang === "es" ? slides[idx].dataset.tituloEs : slides[idx].dataset.tituloEn;
+        dot.title = t;
+        dot.setAttribute("aria-label", `${idx + 1}: ${t}`);
+      });
+
+      dibujarFlujo(lang);
+      document.getElementById("tituloActual").textContent = getSlideTitle(slides[actual]) || "";
+    }
+
+    document.getElementById("btn-lang-es").addEventListener("click", () => setLanguage("es"));
+    document.getElementById("btn-lang-en").addEventListener("click", () => setLanguage("en"));
+
+    /* ============================================================
+       5. MODAL DETALLES Y PORTAPAPELES
+    ============================================================ */
+    function openProjectModal(key) {
+      const data = MODAL_PROJECTS[key][currentLang];
+      document.getElementById("modalEyebrow").textContent = data.eyebrow;
+      document.getElementById("modalTitle").textContent = data.title;
+      document.getElementById("modalBody").innerHTML = data.items
+        .map(item => `<div class="p-4 rounded-xl bg-void border border-zinc-700">${item}</div>`)
+        .join("");
+      document.getElementById("projectModal").classList.remove("hidden");
+    }
+
+    function closeProjectModal() {
+      document.getElementById("projectModal").classList.add("hidden");
+    }
+
+    function copyEmailToClipboard() {
+      const email = "victoralzate61@gmail.com";
+      if (navigator.clipboard?.writeText) {
+        navigator.clipboard.writeText(email).then(() => showToast(I18N[currentLang].toast_email));
+        return;
+      }
+      const temp = document.createElement("input");
+      temp.value = email;
+      document.body.appendChild(temp);
+      temp.select();
+      document.execCommand("copy");
+      document.body.removeChild(temp);
+      showToast(I18N[currentLang].toast_email);
+    }
+
+    let toastTimer;
+    function showToast(msg) {
+      const banner = document.getElementById("toast-banner");
+      document.getElementById("toast-message").textContent = msg;
+      banner.classList.remove("opacity-0", "translate-y-4");
+      banner.classList.add("opacity-100", "translate-y-0");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        banner.classList.add("opacity-0", "translate-y-4");
+        banner.classList.remove("opacity-100", "translate-y-0");
+      }, 2800);
+    }
+
+    /* ============================================================
+       6. ARRANQUE INICIAL
+    ============================================================ */
+    dibujarFlujo("es");
+    lucide.createIcons({ attrs: { "stroke-width": 1.6 } });
+
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    const desdeHash = parseInt(location.hash.slice(1), 10);
+    if (desdeHash >= 1 && desdeHash <= total) {
+      document.documentElement.style.scrollBehavior = "auto";
+      slides[desdeHash - 1].scrollIntoView({ block: "start" });
+      document.documentElement.style.scrollBehavior = "";
+      activar(desdeHash - 1, false);
+    } else {
+      window.scrollTo({ top: 0, behavior: "instant" });
+      activar(0, false);
+    }
+  </script>
+</body>
+
+</html>

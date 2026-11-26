@@ -1,2 +1,2 @@
 # My-Landing-Page-
-This is my firts professional landing page 
+This is my first professional landing page 
